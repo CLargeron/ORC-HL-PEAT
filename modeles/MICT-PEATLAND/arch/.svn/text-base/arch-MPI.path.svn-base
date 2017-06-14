@@ -1,0 +1,4 @@
+set NETCDF_LIBDIR=/usr/local/lib/NCdF/g95/lib
+set NETCDF_INCDIR=/usr/local/lib/NCdF/g95/include
+set IOIPSL_INCDIR=../../IOIPSL/src
+set IOIPSL_LIBDIR=../../../lib

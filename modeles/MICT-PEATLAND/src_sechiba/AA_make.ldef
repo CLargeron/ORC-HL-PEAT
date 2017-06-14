@@ -1,0 +1,18 @@
+#-
+#- $Id: AA_make.ldef 12 2010-11-05 15:42:13Z mmaipsl $
+#-
+#---------------------------------------------------------------------
+#- Creation des elements relatifs a SECHIBA
+#---------------------------------------------------------------------
+SHELL = /bin/sh
+#---------------------------------------------------------------------
+LIBDIR = ../../../lib
+BINDIR = ../../../bin
+MODDIR = $(LIBDIR)
+#---------------------------------------------------------------------
+MODEL_LIB = $(LIBDIR)/libsechiba.a
+SXMODEL_LIB = $(MODEL_LIB)
+#-Q- sxnec  SXMODEL_LIB = $(LIBDIR)/libsxsechiba.a
+#-Q- sx6nec SXMODEL_LIB = $(LIBDIR)/libsxsechiba.a
+#-Q- eshpux SXMODEL_LIB = $(LIBDIR)/libsxsechiba.a
+#-Q- sx8brodie SXMODEL_LIB = $(LIBDIR)/libsxsechiba.a

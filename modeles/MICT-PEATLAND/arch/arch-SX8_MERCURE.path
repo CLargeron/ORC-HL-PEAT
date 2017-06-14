@@ -1,0 +1,4 @@
+set NETCDF_LIBDIR=/usr/local/SX8/soft/netcdf/lib
+set NETCDF_INCDIR=/usr/local/SX8/soft/netcdf/include
+set IOIPSL_INCDIR=$WORKDIR/IOIPSL_MPP/src
+set IOIPSL_LIBDIR=$WORKDIR/IOIPSL_MPP/src

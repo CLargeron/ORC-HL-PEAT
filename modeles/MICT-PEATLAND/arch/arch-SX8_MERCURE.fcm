@@ -1,0 +1,16 @@
+%AR                  sxar
+%MAKE                make
+%COMPILER            sxmpif90
+%LINK                sxmpif90
+%BASE_FFLAGS         -P stack -dw -size_t64 -EP -R5 -float0 -Wf,"-A dbl4,-ptr byte,-pvctl res=whole loopcnt=999999 fullmsg noassume"
+%PROD_FFLAGS         -C vopt 
+%DEV_FFLAGS          -C vsafe -gv -Wf,-init stack=nan,-init heap=nan
+%DEBUG_FFLAGS        -C debug -gv -Wf,-init stack=nan,-init heap=nan
+%FPP_FLAGS           -P -traditional
+%FPP_DEF             NC_DOUBLE BLAS SGEMV=DGEMV SGEMM=DGEMM _OPENMP 
+%BASE_LD             -size_t64 -lblas
+%MPI_FFLAGS          " "
+%MPI_LD              " "
+%OMP_FFLAGS          -P openmp
+%OMP_LD              -P openmp  -Wl,"-ZL 8G"
+

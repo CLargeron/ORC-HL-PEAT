@@ -1,0 +1,15 @@
+%COMPILER            mpif90
+%LINK                mpif90
+%AR                  ar
+%MAKE                gmake
+%FPP_FLAGS           -P -traditional
+%FPP_DEF             NC_DOUBLE BLAS SGEMV=DGEMV SGEMM=DGEMM FFT_MKL
+%BASE_FFLAGS         -i4 -r8 -automatic -align all -I${MKLROOT}/include
+%PROD_FFLAGS         -O3
+%DEV_FFLAGS          -p -g -O3 -traceback -fp-stack-check -ftrapuv
+%DEBUG_FFLAGS        -p -g -traceback
+%MPI_FFLAGS
+%OMP_FFLAGS          -openmp
+%BASE_LD             -p -i4 -r8 -automatic $MKL_LIBS
+%MPI_LD
+%OMP_LD              -openmp

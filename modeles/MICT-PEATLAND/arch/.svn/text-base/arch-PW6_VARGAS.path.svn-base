@@ -1,0 +1,4 @@
+set NETCDF_LIBDIR=/usr/local/pub/NetCDF/3.6.2/lib
+set NETCDF_INCDIR=/usr/local/pub/NetCDF/3.6.2/include
+set IOIPSL_INCDIR=../../../lib
+set IOIPSL_LIBDIR=../../../lib
