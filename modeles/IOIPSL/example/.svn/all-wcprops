@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/igcmg/svn/!svn/ver/1030/IOIPSL/tags/v2_2_1/example
+END
+testconfig.f90
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/igcmg/svn/!svn/ver/1030/IOIPSL/tags/v2_2_1/example/testconfig.f90
+END
+testconfig2.f90
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/igcmg/svn/!svn/ver/1030/IOIPSL/tags/v2_2_1/example/testconfig2.f90
+END
+testhist1.f90
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/igcmg/svn/!svn/ver/1030/IOIPSL/tags/v2_2_1/example/testhist1.f90
+END
+testcalendar.f90
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/igcmg/svn/!svn/ver/1030/IOIPSL/tags/v2_2_1/example/testcalendar.f90
+END
+testflio.f90
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/igcmg/svn/!svn/ver/1030/IOIPSL/tags/v2_2_1/example/testflio.f90
+END
+testhist2.f90
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/igcmg/svn/!svn/ver/1030/IOIPSL/tags/v2_2_1/example/testhist2.f90
+END
+AA_make.ldef
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/igcmg/svn/!svn/ver/1030/IOIPSL/tags/v2_2_1/example/AA_make.ldef
+END
+testrest.f90
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/igcmg/svn/!svn/ver/1030/IOIPSL/tags/v2_2_1/example/testrest.f90
+END
+testopp.f90
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/igcmg/svn/!svn/ver/1030/IOIPSL/tags/v2_2_1/example/testopp.f90
+END
+AA_make
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/igcmg/svn/!svn/ver/1030/IOIPSL/tags/v2_2_1/example/AA_make
+END

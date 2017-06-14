@@ -1,0 +1,17 @@
+! Global module for all parallel modules.
+
+!-
+!< $HeadURL$ 
+!< $Date$
+!< $Author$
+!< $Revision$
+!-
+
+MODULE PARALLEL
+
+  USE data_para
+  USE transfert_para
+  USE ioipsl_para
+  USE tools_para
+
+END MODULE PARALLEL

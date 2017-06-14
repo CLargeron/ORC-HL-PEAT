@@ -1,0 +1,68 @@
+#-
+#- $Id$
+#-
+#-Q- sxdkrz F_O = $(F_D) $(F_P) -C vsafe -size_t64 -I $(MODDIR)
+#-Q- eshpux F_O = $(F_D) $(F_P) -C vsafe -I $(MODDIR)
+#---------------------------------------------------------------------
+#- Create "tools" related to IOIPSL
+#---------------------------------------------------------------------
+
+SXMODEL_LIB = $(MODEL_LIB)
+ifeq ($(L_X),1)
+SXMODEL_LIB = $(LIBDIR)/libsxioipsl.a
+endif
+
+rbld: libioipsl $(BINDIR)/rebuild $(BINDIR)/flio_rbld
+	@echo rebuild is OK
+
+ncregular: $(BINDIR)/ncregular 
+	@echo ncregular is OK
+
+config: libioipsl $(BINDIR)/Fparser $(BINDIR)/tkparse
+	$(BINDIR)/Fparser -name IOIPSL *.f90
+	echo 'Configuration of IOIPSL done'
+
+$(BINDIR)/rebuild: ./rebuild
+	cp -p ./rebuild $(BINDIR)/rebuild
+	chmod a+rx $(BINDIR)/rebuild
+
+$(BINDIR)/flio_rbld: $(SXMODEL_LIB) flio_rbld.f90
+	$(F_C) $(F_O) -I$(NCDF_INC) flio_rbld.f90
+	$(F_L) flio_rbld.o -o $(BINDIR)/flio_rbld \
+               $(L_O) $(SXMODEL_LIB) $(NCDF_LIB)
+	chmod a+rx $(BINDIR)/flio_rbld
+	$(RM) flio_rbld.o
+
+$(BINDIR)/ncregular: ncregular.f90
+	$(F_C) $(F_O) -I$(NCDF_INC) ncregular.f90
+	$(F_L) -o $(BINDIR)/ncregular ncregular.o $(L_O) $(NCDF_LIB)
+	$(RM) ncregular.o
+
+$(BINDIR)/Fparser: Fparser.o
+	$(F_L) -o $(BINDIR)/Fparser Fparser.o -L$(LIBDIR) -lioipsl
+	$(RM) Fparser.o
+
+Fparser.o: Fparser.f90
+	$(F_C) $(F_O) Fparser.f90
+
+$(BINDIR)/tkparse: tkparse.o tkcond.o tkgen.o
+	$(C_L) -o $(BINDIR)/tkparse tkparse.o tkcond.o tkgen.o
+	$(RM) tkparse.o tkcond.o tkgen.o
+
+tkparse.o: tkparse.c tkparse.h
+	$(C_C) $(C_O) -o tkparse.o tkparse.c
+
+tkcond.o: tkcond.c tkparse.h
+	$(C_C) $(C_O) -o tkcond.o tkcond.c
+
+tkgen.o: tkgen.c tkparse.h
+	$(C_C) $(C_O) -o tkgen.o tkgen.c
+
+libioipsl:
+	(cd ../src; $(M_K) -f Makefile)
+
+clean:
+	$(RM) *.*~ Makefile~ core *.o *.mod i.*.L *.L i.*.f90 *.M
+	$(RM) $(BINDIR)/rebuild $(BINDIR)/flio_rbld
+	$(RM) $(BINDIR)/ncregular $(BINDIR)/Fparser $(BINDIR)/tkparse
+

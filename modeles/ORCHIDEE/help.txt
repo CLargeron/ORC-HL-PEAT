@@ -1,0 +1,25 @@
+   This is a "low level" subroutine for opening netCDF files wich
+    !     contain the major coordinate system of the model. Other coordinates 
+    !     needed for other variables will be added as they are needed.  
+    !
+    !     INPUT
+    !
+    !     filename    : Name of the file to be created
+    !     iim1, jjm1  : Horizontal size of the grid which will be stored in the
+    !                   file
+    !     lon1, lat1  : Horizontal grids
+    !     llm1        : Size of the vertical grid
+    !     lev1        : Vertical grid
+    !     ttm1        : Size of time axis
+    !     itaus       : time steps on the time axis
+    !     time0       : Time in julian days at which itau = 0
+    !     dt          : time step in seconds between itaus (one step of itau)
+    !
+    !     OUTPUT
+    !
+    !     fid         : File identification
+    !     nlonid1     : Identification of longitudinal axis
+    !     nlatid1     : Identification of latitudinal axis
+    !     zdimid1     : ID of vertical axis
+    !     tdimid1     : ID of time axis
+    !

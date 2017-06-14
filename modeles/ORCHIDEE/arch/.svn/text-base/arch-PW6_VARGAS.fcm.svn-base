@@ -1,0 +1,15 @@
+%COMPILER            xlf_r
+%LINK                mpxlf_r
+%AR                  ar
+%MAKE                gmake
+%FPP_FLAGS           -P -I/usr/local/pub/FFTW/3.2/include
+%FPP_DEF             NC_DOUBLE BLAS SGEMV=DGEMV SGEMM=DGEMM FFT_FFTW
+%BASE_FFLAGS         -qautodbl=dbl4 -qxlf90=autodealloc -qmaxmem=-1 -qzerosize -I/usr/local/pub/FFTW/3.2/include
+%PROD_FFLAGS         -O3
+%DEV_FFLAGS          -O2 -qfullpath -qinitauto=7FBFFFFF -qfloat=nans -qflttrap=overflow:zerodivide:invalid:enable -qsigtrap
+%DEBUG_FFLAGS        -g -qfullpath -qnooptimize -qinitauto=7FBFFFFF  -qfloat=nans -qflttrap=overflow:zerodivide:invalid:enable -qsigtrap -qcheck
+%MPI_FFLAGS          -I/usr/lpp/ppe.poe/include/thread64
+%OMP_FFLAGS          -qsmp=omp
+%BASE_LD             -lessl -L/usr/local/pub/FFTW/3.2/lib -lfftw3
+%MPI_LD              
+%OMP_LD              -qsmp=omp

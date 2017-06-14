@@ -1,0 +1,17 @@
+%AR                  ar
+%MAKE                gmake
+%FPP                 cpp
+%COMPILER            /usr/local/bin/mpif90 
+%LINK                /usr/local/bin/mpif90 
+%BASE_FFLAGS         -c -i4 -r8 -fno-second-underscore
+%PROD_FFLAGS         -O3
+%DEV_FFLAGS          -freal=nan -fstatic
+%DEBUG_FFLAGS        -g -fbounds-check -fstatic -ftrace=full
+%FPP_FLAGS           -C -P
+%FPP_DEF
+%BASE_LD             -g
+%MPI_FFLAGS          
+%MPI_LD              
+%OMP_FFLAGS          
+%OMP_LD              
+

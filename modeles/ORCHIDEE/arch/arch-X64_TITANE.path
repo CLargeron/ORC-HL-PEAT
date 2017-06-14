@@ -1,0 +1,5 @@
+set NETCDF_LIBDIR=$NETCDF_LIB_DIR
+set NETCDF_INCDIR=$NETCDF_INC_DIR
+set IOIPSL_INCDIR=../../../lib
+set IOIPSL_LIBDIR=../../../lib
+
